@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 import TeacherList from './components/Tutor';
 import { API_URL } from "./api";
 import axios from "axios";
+import React, { useEffect } from "react";
+
 
 function HomePage() {
   return (
