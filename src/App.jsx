@@ -14,6 +14,8 @@ import Yoga from './components/Class';
 import Connection from './components/Contact';
 import Footer from './components/Footer';
 import TeacherList from './components/Tutor';
+import { API_URL } from "./api";
+import axios from "axios";
 
 function HomePage() {
   return (
@@ -29,6 +31,15 @@ function HomePage() {
 }
 
 function App() {
+    useEffect(() => {
+    axios.get(`${API_URL}api/register/`)
+      .then(res => {
+        console.log("API Response:", res.data);
+      })
+      .catch(err => {
+        console.error("API Error:", err);
+      });
+  }, []);
   return (
     <Router>
       <AppNavbar />
