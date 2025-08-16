@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
+import { API_URL } from "../api";
 
 function Gallery() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/gallery/`)
+    fetch(`${API_URL}/api/gallery/`)
       .then((res) => res.json())
-      .then((data) => setImages(data));
+      .then((data) => setImages(data))
+      .catch((err) => console.error("Gallery fetch error:", err));
   }, []);
 
   return (
@@ -15,7 +17,7 @@ function Gallery() {
       {images.map((img) => (
         <div key={img.id} className="gallery-item">
           <img
-            src={`http://127.0.0.1:8000${img.image}`}
+            src={img.image}  
             alt={img.title || `Image ${img.id}`}
             className="gallery-img"
           />

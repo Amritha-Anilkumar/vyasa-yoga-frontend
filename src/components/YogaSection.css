@@ -1,17 +1,20 @@
+/* YogaSection.css */
+
+/* Main container */
 .yoga-section {
   display: flex;
   padding: 2rem;
   gap: 2rem;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ensures mobile wraps */
 }
 
+/* Image container */
 .yoga-images {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-
+  gap: 2rem; /* gap between images if multiple */
 }
 
 .yoga-images img {
@@ -19,18 +22,16 @@
   border-radius: 5px;
   object-fit: cover;
   padding-top: 10px;
- 
-  
 }
 
+/* Description container */
 .yoga-description {
   flex: 1;
- 
-  text-align:justify 
+  text-align: justify;
 }
 
-.yoga-description h2{
-  font-size: 2rem;
+.yoga-description h1 {
+  font-size: 2.5rem; /* adjust for desktop */
   margin-bottom: 1rem;
 }
 
@@ -38,4 +39,49 @@
   font-style: italic;
   color: #555;
   margin-bottom: 1.5rem;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 992px) {
+  .yoga-section {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .yoga-description h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .yoga-section {
+    flex-direction: column; /* image above description */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .yoga-description h1 {
+    font-size: 1.6rem;
+    text-align: center; /* center text for small screens */
+  }
+
+  .yoga-description p {
+    font-size: 0.95rem;
+  }
+
+  .yoga-images {
+    gap: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .yoga-description h1 {
+    font-size: 1.4rem;
+  }
+
+  .yoga-description p {
+    font-size: 0.9rem;
+  }
 }

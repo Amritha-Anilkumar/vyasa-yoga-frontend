@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/*"
+  to = "https://django-backend-6.onrender.com/:splat"
+  status = 200

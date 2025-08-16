@@ -18,7 +18,6 @@ import { API_URL } from "./api";
 import axios from "axios";
 import React, { useEffect } from "react";
 
-
 function HomePage() {
   return (
     <>
@@ -33,15 +32,12 @@ function HomePage() {
 }
 
 function App() {
-    useEffect(() => {
-    axios.get(`${API_URL}api/register/`)
-      .then(res => {
-        console.log("API Response:", res.data);
-      })
-      .catch(err => {
-        console.error("API Error:", err);
-      });
+ useEffect(() => {
+    axios.get('https://django-backend-7.onrender.com/api/showall/')
+      .then(res => console.log("API Response:", res.data))
+      .catch(err => console.log("API Error:", err));
   }, []);
+
   return (
     <Router>
       <AppNavbar />

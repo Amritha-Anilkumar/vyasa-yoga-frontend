@@ -1,0 +1,62 @@
+.teacher-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.teacher-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 200px; /* flexible width */
+  max-width: 250px;
+  box-sizing: border-box;
+  transition: transform 0.2s;
+}
+
+.teacher-card:hover {
+  transform: scale(1.05);
+}
+
+.teacher-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.teacher-name {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.teacher-specialization {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .teacher-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+  
+  .teacher-name {
+    font-size: 1.1rem;
+  }
+
+  .teacher-specialization {
+    font-size: 0.85rem;
+  }
+
+  .teacher-photo {
+    width: 100px;
+    height: 100px;
+  }
+}

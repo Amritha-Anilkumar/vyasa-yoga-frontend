@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SimpleForm.css';
+import { API_URL } from "../api";
 
 function SimpleForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ function SimpleForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/register/', {
+      const response = await fetch(`${API_URL}/api/register/`, { // ✅ store response
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
